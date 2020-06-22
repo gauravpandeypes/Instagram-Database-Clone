@@ -1,3 +1,4 @@
+<h2>Readme yet to be written completely(images), kindly go through the .docx.</h2>
 <h1>DBMS Project Report</h1>
 
 <h3>INSTAGRAM DATABASE</h3>
