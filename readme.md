@@ -1,19 +1,4 @@
-**Functional Dependencies** 
-
-**Identifying Keys based on FDs** 
-
-**[Normalization](#_gwqiqapyxr0x) & testing for lossless join property**
-
-**[DDL](#_pn441yprtk2f): Table creation with all constraints **
-
-**[Triggers](#_a9bswny9ffj) **
-
-**[SQL Queries](#_exvna2br67rz) **
-
-**Viva / modifications (Unit III/ IV concepts) **
-
-
-<h2>INSTAGRAM DATABASE</h2>
+<h1>INSTAGRAM DATABASE</h1>
 
  **Problem statement:**                                               
                                                                       
@@ -289,7 +274,7 @@ The above table cannot be normalised to user\_id, photo\_id and
 photo\_id, created\_id as the above mentioned functional dependency is
 lost. Therefore if such a normalisation is not then it wont be lossless.
 
-**DDL:**
+<h1>DDL:</h1>
 
 Create table scripts here. Ensure integrity constraints are
 defined.[]{#_a9bswny9ffj .anchor} Add sample insert statements as well,
