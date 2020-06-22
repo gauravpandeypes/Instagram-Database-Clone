@@ -1,51 +1,41 @@
-+-------------------+---------------+-------------------------------+
-| **SRN :**         | **Name** :    | **Evaluation date and time:** |
-|                   |               |                               |
-| **PES1201801145** | GAURAV PANDEY |                               |
-+-------------------+---------------+-------------------------------+
+**Functional Dependencies** 
 
-**Functional Dependencies** **2**
+**Identifying Keys based on FDs** 
 
-**Identifying Keys based on FDs** **2**
+**[Normalization](#_gwqiqapyxr0x) & testing for lossless join property**
 
-**[Normalization](#_gwqiqapyxr0x) & testing for lossless join property
-2+2**
+**[DDL](#_pn441yprtk2f): Table creation with all constraints **
 
-**[DDL](#_pn441yprtk2f): Table creation with all constraints 2+2**
+**[Triggers](#_a9bswny9ffj) **
 
-**[Triggers](#_a9bswny9ffj)** **2**
+**[SQL Queries](#_exvna2br67rz) **
 
-**[SQL Queries](#_exvna2br67rz) 2**
+**Viva / modifications (Unit III/ IV concepts) **
 
-**Viva / modifications (Unit III/ IV concepts) 2+2**
 
-[]{#_gwqiqapyxr0x .anchor}
+<h2>INSTAGRAM DATABASE</h2>
 
-**INSTAGRAM DATABASE**
+ **Problem statement:**                                               
+                                                                      
+ A social media website database needs to store information about
+ users (identified by user\_id with username, password and
+ created\_at as attribute), photos(identified by id
+ with image\_url, user\_id, created\_at as attribute),
+ comments(identified by id with comment\_text, photo\_id, user\_id,
+ created\_at as attributes), likes(identified by user\_id, photo\_id
+ with created\_at as attribute), follows(identified by follower\_id,
+ followee\_id and created\_at as attribute), tags(identified by id 
+ with tag\_name and created\_at as attributes, photo\_id).            
+                                                                      
+ Users may/may not have photos, likes, comments, photo tags. A user
+ must be uniquely identified by user\_id. We are interested to store
+ the time of creation in each table for legal reasons. A user must
+ not be allowed to follow himself/herself. A user must not be able to
+ like a photo more than once. A user must be allowed to pick from only a standard set of photo tags defined in the tags table.       
+ 
+ Historical information about who followed whom should be stored even
+ after the person unfollows the other.                                
 
-+----------------------------------------------------------------------+
-| **Problem statement:**                                               |
-|                                                                      |
-| A social media website database needs to store information about     |
-| users (identified by user\_id with username, password and            |
-| created\_at as attribute), photos(identified by id                   |
-|                                                                      |
-| with image\_url, user\_id, created\_at as attribute),                |
-| comments(identified by id with comment\_text, photo\_id, user\_id,   |
-| created\_at as attributes), likes(identified by user\_id, photo\_id  |
-| with created\_at as attribute), follows(identified by follower\_id,  |
-| followee\_id and created\_at as attribute), tags(identified by id    |
-| with tag\_name and created\_at as attributes, photo\_id).            |
-|                                                                      |
-| Users may/may not have photos, likes, comments, photo tags. A user   |
-| must be uniquely identified by user\_id. We are interested to store  |
-| the time of creation in each table for legal reasons. A user must    |
-| not be allowed to follow himself/herself. A user must not be able to |
-| like a photo more than once. A user must be allowed to pick from     |
-| only a standard set of photo tags defined in the tags table.         |
-| Historical information about who followed whom should be stored even |
-| after the person unfollows the other.                                |
-+----------------------------------------------------------------------+
 
 **Database Schema: (show all the tables and the constraints)** 
 ==============================================================
@@ -305,26 +295,23 @@ Create table scripts here. Ensure integrity constraints are
 defined.[]{#_a9bswny9ffj .anchor} Add sample insert statements as well,
 that you would be using for demo.
 
-![](.//media/image1.png){width="4.003572834645669in" height="1.475in"}
+![](.//media/image1.png)  
 
-![](.//media/image2.png){width="4.011272965879265in" height="1.65in"}
+![](.//media/image2.png)  
 =====================================================================
 
-![](.//media/image3.png){width="4.008333333333334in" height="2.004166666666667in"} 
+![](.//media/image3.png)  
 ==================================================================================
 
-![](.//media/image4.png){width="3.9833333333333334in"
-height="1.8013013998250218in"}
+![](.//media/image4.png)  
 
-![](.//media/image5.png){width="4.025in" height="1.7234076990376204in"}
+![](.//media/image5.png)  
 
-![](.//media/image6.png){width="4.032876202974628in"
-height="1.5333333333333334in"}
+![](.//media/image6.png)  
 
-![](.//media/image7.png){width="4.05in" height="1.291621828521435in"}
+![](.//media/image7.png)  
 
-![](.//media/image8.png){width="4.066666666666666in"
-height="1.5966699475065618in"}
+![](.//media/image8.png)  
 
 **Triggers:** 
 =============
@@ -342,8 +329,7 @@ needs to be saved for analytical reasons. Therefore, when a user
 unfollows someone that entry should be deleted from the follows table
 and stored in the unfollows table.
 
-![](.//media/image9.png){width="3.7333333333333334in"
-height="2.572438757655293in"}
+![](.//media/image9.png)  
 
 **SQL Queries:**
 ================
@@ -354,24 +340,21 @@ least 2 correlated-nested Advanced and 2 aggregate queries. \>
 1\) Calculate the average number of photos per user **(aggregate
 query)**
 
-> ![](.//media/image10.png){width="4.3in" height="0.6834087926509186in"}
+> ![](.//media/image10.png)  
 
 2\) What are the top 5 most commonly used hashtags **(aggregate query)**
 
-![](.//media/image11.png){width="2.9351115485564305in"
-height="2.015150918635171in"}
+![](.//media/image11.png)  
 
 3\) Which username and the photo which has the greatest number of likes
 along with the number of likes**. (nested query)**
 
-![](.//media/image12.png){width="2.9833333333333334in"
-height="2.6526509186351706in"}
+![](.//media/image12.png)  
 
 4\) Which users have liked every single photo**. (nested query)**
 
-![](.//media/image13.png){width="4.15in" height="1.8156255468066491in"}
+![](.//media/image13.png)  
 
 5\) Which users have never posted a photo
 
-![](.//media/image14.png){width="3.591666666666667in"
-height="1.5918755468066492in"}
+![](.//media/image14.png)  
