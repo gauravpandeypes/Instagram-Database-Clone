@@ -91,12 +91,12 @@ DELIMITER ;
 
 -- Query
 
-1)
+1) Calculate the average number of photos per user (aggregate query)
 SELECT
   (SELECT COUNT(*) FROM photos) /
   (SELECT COUNT(*) FROM users)  AS average_photo_per_user;
 
-2)
+2) What are the top 5 most commonly used hashtags (aggregate query)
 SELECT
   tags.tag_name,
   COUNT(*) as total
@@ -107,7 +107,8 @@ GROUP BY tags.id
 ORDER BY total DESC
 LIMIT 5;
 
-3)
+3)Which username and the photo which has the greatest number of likes along with 
+the number of likes. (nested query)
 SELECT
   username,
   photos.id,
@@ -121,7 +122,7 @@ INNER JOIN users
 GROUP BY photos.id
 ORDER BY total DESC
 
-4)
+4) Which users have liked every single photo. (nested query)
 SELECT
   username,
   COUNT(*) AS num_likes
@@ -131,7 +132,7 @@ INNER JOIN likes
 GROUP BY likes.user_id
 HAVING num_likes = (SELECT COUNT(*) FROM photos);
 
-5)
+5) Which users have never posted a photo
 SELECT username
 FROM users
 LEFT JOIN photos
